@@ -5,6 +5,7 @@ import { Navbar } from "@/components/navbar/Navbar";
 // import { Oxanium } from "next/font/google";
 // import { Poppins } from "next/font/google";
 // import {Playfair_Display } from "next/font/google";
+import { Toaster } from "@/components/ui/sonner";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -22,6 +23,7 @@ export default function RootLayout({
         <Providers>
           <Navbar />
           {children}
+          <Toaster richColors />
         </Providers>
       </body>
     </html>

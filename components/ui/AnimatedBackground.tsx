@@ -51,7 +51,11 @@ const AnimatedBackground = () => {
         // Draw particles
         ctx.beginPath();
         ctx.arc(particle.x, particle.y, 2, 0, Math.PI * 2);
-        ctx.fillStyle = "#fc3f09";
+        ctx.fillStyle = window.document.documentElement.classList.contains(
+          "dark"
+        )
+          ? ["#fc3f09", "#20fecc", "#ffe713", "#fe00c7"][i % 4]
+          : ["#fc0909", "#0031fb", "#ffdd00", "#00fe04"][i % 4];
         ctx.fill();
 
         // Connect particles
