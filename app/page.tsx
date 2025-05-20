@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <Parallax type="ABOUT ME" />
+      <Parallax />
       <AboutMe />
       <ParallaxSkills />
       <Skills />

@@ -46,11 +46,11 @@ const ContactForm = () => {
   return (
     <motion.form
       onSubmit={handleSubmit}
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      transition={{ delay: 4, duration: 1 }} //fade เข้ามา
+      initial={{ opacity: 0, x: 100 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      transition={{ delay: 3, duration: 2 }} //fade เข้ามา
       viewport={{ once: true }}
-      className="p-4 w-full h-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 flex flex-col justify-between"
+      className="flex flex-col relative justify-between p-4 w-full h-full "
     >
       <Label>From</Label>
       <Input

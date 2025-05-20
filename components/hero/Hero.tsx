@@ -7,6 +7,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "../ui/button";
 import Image from "next/image";
 import { oxanium } from "../font/font";
+import Link from "next/link";
 
 const Hero = () => {
   const [showTerminal, setShowTerminal] = useState(false);
@@ -47,54 +48,67 @@ const Hero = () => {
             <TerminalHero />
           </motion.div>
         ) : (
-          <motion.div
-            key="hero-content"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 0.5 }}
-            className="grid lg:grid-cols-2 gap-12 h-full items-center relative z-10 px-4"
-          >
-            <motion.div
-              initial={{ opacity: 0, x: -100 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 1, delay: 0.5 }}
-              className="bg-red-400 dark:bg-secondary/50 items-center justify-center space-y-8 p-4 mx-16 rounded-lg shadow-lg"
-            >
-              <h1
-                className={`${oxanium.className} text-4xl font-bold text-primary`}
+          <div key="hero-content" className="grid lg:grid-cols-2 gap-12 h-full">
+            {/* Left Column */}
+            <div className="relative">
+              <motion.div
+                initial={{ opacity: 0, scale: 0, y: 100 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
+                transition={{ duration: 1.5, delay: 0.5 }}
+                className="absolute inset-0 left-10 z-10 w-full h-full rounded-full p-20"
               >
-                Hello, I&apos;m{" "}
-                <span className="text-white">Jirayut Sikkhacharoen</span>
-              </h1>
-              <p className="text-lg text-gray-100 mt-4">
-                I&apos;m a passionate developer with a love for creating
-                beautiful and functional web applications. I specialize in
-                front-end development and have experience with various
-                technologies.
-              </p>
+                <Image
+                  src="/bannerpic.webp"
+                  alt="my pic"
+                  loading="eager"
+                  priority
+                  width={400}
+                  height={400}
+                  className="w-full h-full object-cover rounded-full border-4 border-primary dark:border-secondary/50 shadow-lg"
+                />
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, scale: 0, y: 100 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
+                transition={{ duration: 1.5, delay: 0.5 }}
+                className="absolute inset-0 left-10 bg-gradient-to-br from-destructive/20 via-accent/20 to-primary/20 animate-pulse blur-3xl w-full h-full rounded-full p-20"
+              ></motion.div>
+            </div>
+            {/* Right Column */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0, x: 500 }}
+              animate={{ opacity: 1, scale: 1, x: 0 }}
+              transition={{ duration: 1, delay: 1 }}
+              className="flex flex-col items-center justify-center space-y-8 px-10 me-14"
+            >
+              <div>
+                <h1
+                  className={`${oxanium.className} text-6xl font-bold text-primary`}
+                >
+                  Hello, I&apos;m
+                </h1>
+              </div>
+              <span className={`${oxanium.className} text-5xl font-bold`}>
+                Jirayut Sikkhacharoen
+              </span>
+              <div className="flex justify-center w-full p-2 mt-4 border-t-2  border-primary">
+                <p className="text-lg text-gray-100">
+                  I&apos;m a passionate software developer with a love for
+                  creating beautiful and functional applications. I constantly
+                  strive to learn new technologies and tools to improve my
+                  skills and deliver better solutions.
+                </p>
+              </div>
               <div className="flex gap-4">
-                <Button>Contact Me</Button>
-                <Button>Download CV</Button>
+                <Button className="cursor-pointer">
+                  <Link href="#contact">Contact Me</Link>
+                </Button>
+                <Button className="cursor-pointer">
+                  <Link href="#contact">Contact Me</Link>
+                </Button>
               </div>
             </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 100 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 1 }}
-              className="relative h-full p-4 mx-16"
-            >
-              <Image
-                src="/3DMarque/1.png"
-                alt="my pic"
-                loading="eager"
-                priority
-                width={640}
-                height={640}
-                className="absolute -top-50 left-0 w-full h-full scale-150 object-cover"
-              />
-            </motion.div>
-          </motion.div>
+          </div>
         )}
       </AnimatePresence>
     </section>

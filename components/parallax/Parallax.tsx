@@ -5,13 +5,8 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
 import { oxanium } from "../font/font";
 
-type ParallaxProps = {
-  type: string;
-};
-
-export default function Parallax({ type }: ParallaxProps) {
+export default function Parallax() {
   const ref = useRef<HTMLDivElement>(null);
-
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start start", "end start"],
@@ -29,15 +24,18 @@ export default function Parallax({ type }: ParallaxProps) {
     >
       <motion.h1
         style={{ y: yText, scale: textScale }}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ delay: 0.5, duration: 1 }}
         className={`${oxanium.className} text-white text-5xl md:text-7xl font-bold z-50`}
       >
-        {type}
+        About me
       </motion.h1>
       <motion.div className="absolute inset-0 bg-black/30 z-10"></motion.div>
       <motion.div
-        initial={{ opacity: 0, x: -100 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        transition={{ duration: 1, delay: 0.5 }}
+        initial={{ opacity: 0, scale: 0.5 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 1 }}
         className="absolute inset-0"
       >
         <Image
@@ -51,7 +49,7 @@ export default function Parallax({ type }: ParallaxProps) {
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
-        transition={{ duration: 2, delay: 0.5, ease: "easeInOut" }}
+        transition={{ duration: 2, delay: 2, ease: "easeInOut" }}
         style={{
           x: yBg,
           y: yMeteor,

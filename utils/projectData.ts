@@ -4,9 +4,9 @@ export const projectData = [
     name: "EzTicket",
     description:
       "A cinema booking mockup web app powered by TMDB API. Built with React.js, featuring dynamic movie data, state management with Zustand, and clean UI interactions.",
-    image: "/3DMarque/4.png",
-    demo: "https://my-portfolio-phi.vercel.app/",
-    github: "https://github.com/My-Portfolio-Project/My-Portfolio",
+    image: "/3DMarque/movie.png",
+    demo: "https://movie-tmdb-beta.vercel.app",
+    github: "https://github.com/Jirayut16/movie-tmdb",
     tag: ["React.js", "TypeScript", "Zustand", "Axios", "Tailwind CSS"],
     features: [
       "Dynamic Movie Data",
@@ -22,9 +22,9 @@ export const projectData = [
     name: "JS-Shop ",
     description:
       "A modern fullstack e-commerce app built with React, Express, and MongoDB. Features secure JWT auth, Stripe payments, image uploads via Cloudinary, and user experience in mind.",
-    image: "/3DMarque/2.png",
-    demo: "https://my-portfolio-phi.vercel.app/",
-    github: "https://github.com/My-Portfolio-Project/My-Portfolio",
+    image: "/3DMarque/jsshop.png",
+    demo: "https://jsshop.vercel.app/",
+    github: "https://github.com/Jirayut16/jsshop",
     tag: [
       "React.js",
       "TypeScript",
@@ -53,9 +53,9 @@ export const projectData = [
     name: "Today Blog",
     description:
       "A lightning-fast static blog built with Astro Framework. Optimized for performance and SEO, scoring a perfect 100 on Google PageSpeed across all metrics.",
-    image: "/3DMarque/3.png",
-    demo: "https://my-portfolio-phi.vercel.app/",
-    github: "https://github.com/My-Portfolio-Project/My-Portfolio",
+    image: "/3DMarque/blog.png",
+    demo: "https://today-blog-rouge.vercel.app/",
+    github: "https://github.com/Jirayut16/today-blog",
     tag: ["Astro", "Markdown", "TypeScript", "Tailwind CSS"],
     features: [
       "Static Site Generation (SSG)",
@@ -72,8 +72,8 @@ export const projectData = [
     description:
       "A secure and extensible authentication system built with BetterAuth. Supports email/password and social login via Google and GitHub, with session stored in PostgreSQL using Prisma.",
     image: "/3DMarque/7.png",
-    demo: "https://my-portfolio-phi.vercel.app/",
-    github: "https://github.com/My-Portfolio-Project/My-Portfolio",
+    demo: "#",
+    github: "https://github.com/Jirayut16/better-auth",
     tag: [
       "BetterAuth",
       "Next.js",
@@ -97,9 +97,9 @@ export const projectData = [
     name: "Food Landing Page",
     description:
       "A modern food landing page template built with Next.js, styled using Tailwind CSS and shadcn/ui, and animated with Framer Motion for delightful interactions.",
-    image: "/3DMarque/5.png",
-    demo: "https://my-portfolio-phi.vercel.app/",
-    github: "https://github.com/My-Portfolio-Project/My-Portfolio",
+    image: "/3DMarque/food.png",
+    demo: "https://food-landing-page-azure.vercel.app/",
+    github: "https://github.com/Jirayut16/food-landing-page",
     tag: [
       "Next.js",
       "Tailwind CSS",
@@ -120,9 +120,9 @@ export const projectData = [
     name: "SaaS Landing Page",
     description:
       "A modern SaaS landing page template built with Next.js, styled using Tailwind CSS and shadcn/ui, with interactive animations powered by Framer Motion.",
-    image: "/3DMarque/6.png",
-    demo: "https://my-portfolio-phi.vercel.app/",
-    github: "https://github.com/My-Portfolio-Project/My-Portfolio",
+    image: "/3DMarque/saas.png",
+    demo: "https://saas-landing-page-nine-zeta.vercel.app/",
+    github: "https://github.com/Jirayut16/saas-landing-page",
     tag: [
       "Next.js",
       "Tailwind CSS",
@@ -143,9 +143,9 @@ export const projectData = [
     name: "My Portfolio",
     description:
       "A modern and responsive personal portfolio website built with Next.js, styled using Tailwind CSS, and enhanced with smooth animations from Framer Motion.",
-    image: "/3DMarque/1.png",
-    demo: "https://my-portfolio-phi.vercel.app/",
-    github: "https://github.com/My-Portfolio-Project/My-Portfolio",
+    image: "/3DMarque/saas.png",
+    demo: "#",
+    github: "#",
     tag: [
       "Next.js",
       "Tailwind CSS",
@@ -161,9 +161,9 @@ export const projectData = [
     name: "Todolist",
     description:
       "A clean and responsive todolist app. Built with React and TypeScript. Features include task creation, editing, deletion, and local storage persistence.",
-    image: "/3DMarque/8.png",
+    image: "/3DMarque/todo.png",
     demo: "https://jirayut-todolist-app.vercel.app/",
-    github: "https://github.com/My-Portfolio-Project/My-Portfolio",
+    github: "https://github.com/Jirayut16/todolist-app",
     tag: ["React.js", "TypeScript", "Tailwind CSS", "SweetAlert"],
     features: [
       "Task Create, Edit, Delete",

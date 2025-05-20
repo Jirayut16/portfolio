@@ -31,12 +31,12 @@ const socialsImg = [
 const Contact = () => {
   return (
     <div id="contact" className="container mx-auto py-20 h-screen">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full h-full">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full h-full relative">
         {/* Left col */}
         <motion.div
           initial={{ opacity: 0, x: -100 }}
           whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 1, delay: 4 }}
+          transition={{ duration: 2, delay: 3 }}
           viewport={{ once: true }}
           className="flex flex-col justify-between pb-4"
         >
@@ -85,18 +85,18 @@ const Contact = () => {
         </motion.div>
 
         {/* Right col */}
-        <div className="overflow-hidden relative">
+        <div className="overflow-hidden">
           <motion.svg
             xmlns="http://www.w3.org/2000/svg"
-            width="500"
-            height="500"
+            width="600"
+            height="600"
             viewBox="0 0 32 32"
             initial={{ opacity: 1 }}
             whileInView={{ opacity: 0 }}
-            transition={{ delay: 3, duration: 1.2 }} //หายออกไป
+            transition={{ delay: 3, duration: 0.5 }} //หายออกไป
             viewport={{ once: true }}
             className={
-              "absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+              "absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-0"
             }
           >
             <motion.path
@@ -105,7 +105,7 @@ const Contact = () => {
               strokeWidth={0.2}
               initial={{ pathLength: 0 }}
               whileInView={{ pathLength: 1 }}
-              transition={{ duration: 3, ease: "easeInOut" }} //ความเร็วที่วาด
+              transition={{ duration: 2, ease: "easeInOut" }} //ความเร็วที่วาด
               d="M16 14h2v2h-2zm4 0h2v2h-2zm4 0h2v2h-2zm-8 4h2v2h-2zm4 0h2v2h-2zm4 0h2v2h-2zm-8 4h2v2h-2zm4 0h2v2h-2zm4 0h2v2h-2zm-8-12h10v2H16z"
             />
             <motion.path
@@ -114,7 +114,7 @@ const Contact = () => {
               strokeWidth={0.2}
               initial={{ pathLength: 0 }}
               whileInView={{ pathLength: 1 }}
-              transition={{ duration: 3, ease: "easeInOut", delay: 1 }}
+              transition={{ duration: 2, ease: "easeInOut", delay: 1 }}
               d="M28 6H14V5a2.002 2.002 0 0 0-2-2H8a2.002 2.002 0 0 0-2 2v1H4a2.002 2.002 0 0 0-2 2v18a2.002 2.002 0 0 0 2 2h24a2.002 2.002 0 0 0 2-2V8a2.002 2.002 0 0 0-2-2ZM8 5h4v17H8Zm20 21H4V8h2v14a2.002 2.002 0 0 0 2 2h4a2.002 2.002 0 0 0 2-2V8h14Z"
             />
           </motion.svg>

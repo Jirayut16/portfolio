@@ -4,6 +4,7 @@ import { projectData } from "@/utils/projectData";
 import { useState } from "react";
 import { oxanium } from "../font/font";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 const Projects = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -11,18 +12,64 @@ const Projects = () => {
   const totalPages = Math.ceil(projectData.length / itemsPerPage);
   const startIndex = (currentPage - 1) * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
+  const [prevLoading, setPrevLoading] = useState(false);
+  const [nextLoading, setNextLoading] = useState(false);
   const currentItems = projectData.slice(startIndex, endIndex);
+  const delay = (ms: number) => {
+    return new Promise((resolve) => setTimeout(resolve, ms));
+  };
+  const handleNextPage = async () => {
+    if (currentPage < totalPages && !nextLoading) {
+      setNextLoading(true);
+      await delay(500);
+      setCurrentPage((prevPage) => prevPage + 1);
+      document.getElementById("projects")?.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+      setNextLoading(false);
+    }
+  };
+
+  const handlePrevPage = async () => {
+    if (currentPage > 1 && !prevLoading) {
+      setPrevLoading(true);
+      await delay(500);
+      setCurrentPage((prevPage) => prevPage - 1);
+      document.getElementById("projects")?.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+      setPrevLoading(false);
+    }
+  };
 
   return (
     <section id="projects" className="container mx-auto py-10">
-      <div className="flex flex-col space-y-6">
+      <motion.div
+        initial={{ opacity: 0, y: 100 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{
+          duration: 1.2,
+          delay: 0.2,
+          ease: "easeInOut",
+        }}
+        viewport={{ once: false, amount: 0.2 }}
+        className="flex flex-col space-y-6"
+      >
         {currentItems.map((item, index) => (
           <div
             key={index}
             className="flex flex-col md:flex-row bg-card rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all h-[300px]"
           >
             {/* Image Section*/}
-            <div className="w-full md:w-[400px] h-full relative">
+            <motion.div
+              initial={{ opacity: 0, x: -100 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 1, delay: 0.3 * index }}
+              viewport={{ once: false, amount: 0.2 }}
+              className="w-full md:w-[400px] h-full relative"
+            >
               <Image
                 src={item.image}
                 alt={item.name}
@@ -31,10 +78,16 @@ const Projects = () => {
                 className="object-contain p-4"
                 priority
               />
-            </div>
+            </motion.div>
 
             {/* Content Section */}
-            <div className="flex-1 p-6 flex flex-col">
+            <motion.div
+              initial={{ opacity: 0, x: 100 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 1, delay: 0.3 * index }}
+              viewport={{ once: false, amount: 0.2 }}
+              className="flex-1 p-6 flex flex-col"
+            >
               {/* Header */}
               <div className="mb-4">
                 <h2
@@ -93,29 +146,29 @@ const Projects = () => {
                   )}
                 </div>
               </div>
-            </div>
+            </motion.div>
           </div>
         ))}
-      </div>
+      </motion.div>
 
       {/* Pagination */}
       <div className="flex justify-center items-center gap-4 mt-8">
         <button
-          disabled={currentPage === 1}
-          onClick={() => setCurrentPage((p) => p - 1)}
-          className="px-4 py-2 bg-primary/10 text-primary rounded-lg disabled:opacity-50 hover:bg-primary/20 transition-colors text-sm"
+          disabled={currentPage === 1 || prevLoading}
+          onClick={handlePrevPage}
+          className="px-4 py-2 bg-primary/10 text-primary rounded-lg disabled:opacity-50 hover:bg-primary/20 transition-colors text-sm cursor-pointer"
         >
-          Previous
+          {prevLoading ? "Loading..." : "Previous"}
         </button>
         <span className="text-sm font-medium">
           Page {currentPage} of {totalPages}
         </span>
         <button
-          disabled={currentPage === totalPages}
-          onClick={() => setCurrentPage((p) => p + 1)}
-          className="px-4 py-2 bg-primary/10 text-primary rounded-lg disabled:opacity-50 hover:bg-primary/20 transition-colors text-sm"
+          disabled={currentPage === totalPages || nextLoading}
+          onClick={handleNextPage}
+          className="px-4 py-2 bg-primary/10 text-primary rounded-lg disabled:opacity-50 hover:bg-primary/20 transition-colors text-sm cursor-pointer"
         >
-          Next
+          {nextLoading ? "Loading..." : "Next"}
         </button>
       </div>
     </section>
