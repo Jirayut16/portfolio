@@ -1,10 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { Providers } from "./ThemeProvider";
 import { Navbar } from "@/components/navbar/Navbar";
-// import { Oxanium } from "next/font/google";
-// import { Poppins } from "next/font/google";
-// import {Playfair_Display } from "next/font/google";
 import { Toaster } from "@/components/ui/sonner";
 
 export const metadata: Metadata = {
@@ -20,11 +16,9 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body>
-        <Providers>
-          <Navbar />
-          {children}
-          <Toaster richColors />
-        </Providers>
+        <Navbar />
+        {children}
+        <Toaster richColors />
       </body>
     </html>
   );

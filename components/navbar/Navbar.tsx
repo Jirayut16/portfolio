@@ -4,9 +4,8 @@ import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { useScroll } from "@/lib/hooks/use-scroll";
-import { ThemeToggle } from "@/components/theme-toggle";
-import { CodeXml } from "lucide-react";
 import { useEffect, useState } from "react";
+import { caveat } from "../font/font";
 
 interface NavItem {
   name: string;
@@ -64,36 +63,26 @@ export function Navbar() {
   return (
     <header
       className={cn(
-        "sticky z-50 transition-all duration-700 ease-in-out",
+        "sticky z-50 transition-all transform-gpu will-change-transform duration-1000 ease-in-out",
         scrolled
-          ? "bg-primary-foreground/80 dark:bg-background/80 w-1/2 backdrop-blur-md top-2 translate-x-1/2 border-2 border-foreground/10 rounded-full"
-          : "bg-primary-foreground dark:bg-transparent w-full top-0 left-0 translate-x-0 border dark:border-none"
+          ? "bg-background/80 w-1/3 left-1/2 -translate-x-1/2 backdrop-blur-md top-2 border-2 border-foreground/10 rounded-full scale-90"
+          : "bg-transparent w-full top-0 left-0 translate-x-0 duration-1000 ease-in-out"
       )}
     >
-      <div className="container mx-auto flex h-16 items-center justify-between px-4">
+      <div
+        className={`${scrolled ? "flex items-center justify-center px-4" : "flex items-center justify-between px-4"} container mx-auto h-16`}
+      >
         <Link href="/" className="flex items-center gap-2">
-          <motion.div
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.3 }}
-          >
-            <CodeXml
-              className={cn(
-                "h-6 w-6 sm:h-8 sm:w-8",
-                scrolled ? "text-primary hidden" : "text-foreground"
-              )}
-            />
-          </motion.div>
           <motion.span
             initial={{ opacity: 0, x: -10 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.3, delay: 0.1 }}
             className={cn(
-              "font-bold text-lg sm:text-2xl",
-              scrolled ? "text-primary hidden" : "text-foreground"
+              `${caveat.className} font-bold text-lg sm:text-4xl hover:text-primary transition-colors `,
+              scrolled ? "text-primary hidden" : "text-foreground "
             )}
           >
-            Jirayut S.
+            &lt; OhmmiiDev / &gt;
           </motion.span>
         </Link>
         <nav className="hidden md:flex gap-12">
@@ -126,15 +115,6 @@ export function Navbar() {
             </motion.div>
           ))}
         </nav>
-        <div className="flex items-center gap-4">
-          <motion.div
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.3, delay: 0.4 }}
-          >
-            <ThemeToggle />
-          </motion.div>
-        </div>
       </div>
     </header>
   );

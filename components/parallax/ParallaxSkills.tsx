@@ -79,7 +79,7 @@ export default function ParallaxSkills() {
             <h1
               className={`${oxanium.className} text-5xl md:text-7xl font-bold`}
             >
-              My Skills & Certificates
+              My Skills
             </h1>
           </motion.div>
         </div>

@@ -7,10 +7,12 @@ import Parallax from "@/components/parallax/Parallax";
 import ParallaxSkills from "@/components/parallax/ParallaxSkills";
 import ParallaxProject from "@/components/parallax/ParallaxProject";
 import Contact from "@/components/contact/Contact";
+import ScrollLinked from "@/components/ui/ScrollProgress";
 
 export default function Home() {
   return (
     <>
+      <ScrollLinked />
       <Hero />
       <Parallax />
       <AboutMe />

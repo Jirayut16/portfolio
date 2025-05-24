@@ -71,7 +71,7 @@ const Hero = () => {
                 initial={{ opacity: 0, scale: 0, y: 100 }}
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 transition={{ duration: 1.5, delay: 0.5 }}
-                className="absolute inset-0 left-10 bg-gradient-to-br from-destructive/20 via-accent/20 to-primary/20 animate-pulse blur-3xl w-full h-full rounded-full p-20"
+                className="absolute inset-0 left-10 bg-gradient-to-br from-destructive/20 via-primary/10 to-primary/20 animate-pulse blur-3xl w-full h-full rounded-full p-20"
               ></motion.div>
             </div>
             {/* Right Column */}

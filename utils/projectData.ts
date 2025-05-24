@@ -71,8 +71,8 @@ export const projectData = [
     name: "BetterAuth",
     description:
       "A secure and extensible authentication system built with BetterAuth. Supports email/password and social login via Google and GitHub, with session stored in PostgreSQL using Prisma.",
-    image: "/3DMarque/7.png",
-    demo: "#",
+    image: "/3DMarque/better-auth.png",
+    demo: "https://better-auth-orcin.vercel.app/",
     github: "https://github.com/Jirayut16/better-auth",
     tag: [
       "BetterAuth",
@@ -81,6 +81,8 @@ export const projectData = [
       "Prisma",
       "PostgreSQL",
       "Arcjet",
+      "React-hook-form",
+      "Zod",
     ],
     features: [
       "Email & Password Authentication",
@@ -145,7 +147,7 @@ export const projectData = [
       "A modern and responsive personal portfolio website built with Next.js, styled using Tailwind CSS, and enhanced with smooth animations from Framer Motion.",
     image: "/3DMarque/saas.png",
     demo: "#",
-    github: "#",
+    github: "https://github.com/Jirayut16/portfolio",
     tag: [
       "Next.js",
       "Tailwind CSS",
