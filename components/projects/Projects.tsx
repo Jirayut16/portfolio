@@ -47,7 +47,7 @@ const Projects = () => {
   return (
     <section
       id="projects"
-      className="container mx-auto py-8 sm:py-10 px-4 sm:px-0"
+      className="container mx-auto py-8 sm:py-10 px-8 sm:px-0"
     >
       <motion.div
         initial={{ opacity: 0, y: 100 }}
@@ -124,7 +124,7 @@ const Projects = () => {
               </div>
 
               {/* Footer: Tags and Links */}
-              <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between pt-3 space-y-2 sm:space-y-0 border-t border-gray-700">
+              <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between pt-3 mt-2 sm:mt-0 space-y-2 sm:space-y-0 border-t border-gray-700">
                 <div className="flex flex-wrap gap-1">
                   {item.tag.map((tag, index) => (
                     <span

@@ -41,7 +41,7 @@ const Contact = () => {
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 2, delay: 3 }}
           viewport={{ once: true }}
-          className="flex flex-col justify-between pb-4 z-50"
+          className="flex flex-col justify-between pb-4 z-10"
         >
           <h1 className={`${oxanium.className} text-6xl font-bold `}>
             Let&apos;s work

@@ -6,17 +6,7 @@ import Link from "next/link";
 import { useScroll } from "@/lib/hooks/use-scroll";
 import { useEffect, useState } from "react";
 import { caveat } from "../font/font";
-
-interface NavItem {
-  name: string;
-  href: string;
-}
-const navItems: NavItem[] = [
-  { name: "About Me", href: "#aboutme" },
-  { name: "Skills", href: "#skills" },
-  { name: "Projects", href: "#projects" },
-  { name: "Contact", href: "#contact" },
-];
+import { navItems } from "@/utils/navbarItems";
 
 export function Navbar() {
   const [activeSection, setActiveSection] = useState<string>("");
