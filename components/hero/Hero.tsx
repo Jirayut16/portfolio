@@ -66,8 +66,8 @@ const Hero = () => {
                   alt="my pic"
                   loading="eager"
                   priority
-                  width={400}
-                  height={400}
+                  width={window.innerWidth < 640 ? 200 : 400}
+                  height={window.innerHeight < 640 ? 200 : 400}
                   className="w-full h-full object-cover rounded-n sm:rounded-full sm:border-4 border-secondary/50 shadow-lg"
                 />
               </motion.div>
