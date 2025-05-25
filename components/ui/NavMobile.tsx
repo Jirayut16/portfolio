@@ -7,16 +7,17 @@ import Link from "next/link";
 
 const sidebarVariants = {
   open: {
-    clipPath: "circle(1200px at 50px 50px)",
+    clipPath: "circle(1200px at 350px 40px)",
     transition: {
       type: "spring",
       stiffness: 20,
+      restDelta: 2,
     },
   },
   closed: {
-    clipPath: "circle(20px at 350px 40px)", //x,y
+    clipPath: "circle(25px at 390px 40px)", //x,y
     transition: {
-      delay: 0.5,
+      delay: 0.2,
       type: "spring",
       stiffness: 400,
       damping: 40,
@@ -27,7 +28,8 @@ const sidebarVariants = {
 const linkContainerVariants = {
   open: {
     transition: {
-      staggerChildren: 0.5,
+      staggerChildren: 0.2,
+      delayChildren: 0.2,
     },
   },
   closed: {
@@ -42,13 +44,18 @@ const linkItemVariants = {
   open: {
     y: 0,
     opacity: 1,
+    transition: {
+      y: { stiffness: 1000, velocity: -100 },
+    },
   },
   closed: {
     y: 50,
     opacity: 0,
+    transition: {
+      y: { stiffness: 1000 },
+    },
   },
 };
-
 const Links = ({
   setOpen,
 }: {
@@ -93,7 +100,7 @@ const ToggleButton = ({
   return (
     <button
       onClick={() => setOpen((prev) => !prev)}
-      className="z-[999] flex justify-center items-center fixed top-5 right-5 w-10 h-10 rounded-full bg-white border-none cursor-pointer"
+      className="z-[999] flex justify-center items-center fixed top-5 right-5 w-10 h-10 rounded-full bg-transparent border-none cursor-pointer"
     >
       <svg width="20" height="25" viewBox="0 0 23 23">
         <motion.path
@@ -138,7 +145,6 @@ const Sidebar = () => {
     } else {
       document.body.style.overflow = "auto";
     }
-
     // Cleanup: in case component unmounts while open
     return () => {
       document.body.style.overflow = "auto";

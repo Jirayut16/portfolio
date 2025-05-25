@@ -27,7 +27,7 @@ const Skills = () => {
       id="skills"
       className="container mx-auto min-h-screen py-4 sm:py-10 px-4"
     >
-      <motion.div className="flex flex-col space-y-4 sm:space-y-8 ">
+      <motion.div className="flex flex-col space-y-4 sm:space-y-8 overflow-hidden ">
         {skillsData.map((item, index) => (
           <motion.div
             key={index}

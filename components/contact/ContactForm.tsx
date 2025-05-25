@@ -48,7 +48,7 @@ const ContactForm = () => {
       onSubmit={handleSubmit}
       initial={{ opacity: 0, x: 100 }}
       whileInView={{ opacity: 1, x: 0 }}
-      transition={{ delay: 3, duration: 2 }} //fade เข้ามา
+      transition={{ delay: 3.8, duration: 2 }} //fade เข้ามา
       viewport={{ once: true }}
       className="flex flex-col relative justify-between gap-4 sm:gap-0 p-4 w-full h-full"
     >

@@ -20,7 +20,6 @@ export default function RootLayout({
       <body>
         <Navbar />
         <Sidebar />
-
         {children}
         <Toaster richColors />
       </body>
