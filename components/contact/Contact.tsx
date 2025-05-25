@@ -30,15 +30,18 @@ const socialsImg = [
 
 const Contact = () => {
   return (
-    <div id="contact" className="container mx-auto py-20 h-screen">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full h-full relative">
+    <div
+      id="contact"
+      className="container mx-auto py-10 sm:py-20  min-h-screen sm:h-screen"
+    >
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full h-full px-4 sm:px-0 relative">
         {/* Left col */}
         <motion.div
           initial={{ opacity: 0, x: -100 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 2, delay: 3 }}
           viewport={{ once: true }}
-          className="flex flex-col justify-between pb-4"
+          className="flex flex-col justify-between pb-4 z-50"
         >
           <h1 className={`${oxanium.className} text-6xl font-bold `}>
             Let&apos;s work
@@ -46,8 +49,8 @@ const Contact = () => {
           </h1>
 
           <div>
-            <p className="font-bold text-2xl">Contact Me:</p>
-            <div className="flex flex-col space-y-8 py-4">
+            <p className="font-bold text-2xl mt-2 sm:mt-0">Contact Me:</p>
+            <div className="flex flex-col space-y-4 sm:space-y-8 py-4">
               <div className="flex gap-4 items-center">
                 <Phone className="w-8 h-8" />
                 <p className="text-xl "> +66 99 489 1986</p>
@@ -88,7 +91,7 @@ const Contact = () => {
         <div className="overflow-hidden">
           <motion.svg
             xmlns="http://www.w3.org/2000/svg"
-            width="600"
+            width="(max-width: 600px) 100%, 600px"
             height="600"
             viewBox="0 0 32 32"
             initial={{ opacity: 1 }}

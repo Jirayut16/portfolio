@@ -63,7 +63,7 @@ export function Navbar() {
   return (
     <header
       className={cn(
-        "sticky z-50 transition-all transform-gpu will-change-transform duration-1000 ease-in-out",
+        "sticky z-50 transition-all transform-gpu will-change-transform duration-1000 ease-in-out hidden md:block",
         scrolled
           ? "bg-background/80 w-1/3 left-1/2 -translate-x-1/2 backdrop-blur-md top-2 border-2 border-foreground/10 rounded-full scale-90"
           : "bg-transparent w-full top-0 left-0 translate-x-0 duration-1000 ease-in-out"

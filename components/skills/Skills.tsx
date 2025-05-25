@@ -23,8 +23,11 @@ const Skills = () => {
     },
   });
   return (
-    <section id="skills" className="container mx-auto min-h-screen py-10 px-4">
-      <motion.div className=" flex flex-col space-y-8 ">
+    <section
+      id="skills"
+      className="container mx-auto min-h-screen py-4 sm:py-10 px-4"
+    >
+      <motion.div className="flex flex-col space-y-4 sm:space-y-8 ">
         {skillsData.map((item, index) => (
           <motion.div
             key={index}
@@ -33,21 +36,21 @@ const Skills = () => {
             whileInView="visible"
             transition={{ duration: 1, delay: index * 0.3 }}
             viewport={{ once: true, amount: 0.3 }}
-            className="grid grid-cols-1 md:grid-cols-12 gap-8  rounded-lg"
+            className="grid grid-cols-1 md:grid-cols-12 gap-2 sm:gap-8 "
           >
             <p
-              className={`${oxanium.className} col-span-4 p-8 text-2xl text-center`}
+              className={`${oxanium.className} @max-sm:w-full sm:col-span-4 p-2 sm:p-8 text-2xl text-center`}
             >
               {item.category}:
             </p>
-            <div className="flex flex-wrap items-center gap-4 col-span-8">
+            <div className="flex flex-wrap items-center gap-4 sm:col-span-8">
               {item.skills.map((skill) => (
                 <TooltipProvider key={skill.name}>
                   <Tooltip>
                     <TooltipTrigger>
                       <div
                         key={skill.name}
-                        className="relative p-2 rounded-lg bg-gray-100 w-16 h-16 hover:scale-110 transition-all duration-300 ease-in-out cursor-pointer"
+                        className="relative p-2 rounded-lg bg-gray-100 w-14 sm:w-16 h-14 sm:h-16 hover:scale-110 transition-all duration-300 ease-in-out cursor-pointer"
                       >
                         <ShineBorder
                           shineColor={[

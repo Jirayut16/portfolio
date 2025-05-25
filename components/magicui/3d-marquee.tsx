@@ -18,12 +18,12 @@ export const ThreeDMarquee = ({
   return (
     <div
       className={cn(
-        "mx-auto block h-screen overflow-hidden rounded-2xl max-sm:h-100",
+        "mx-auto block h-screen overflow-hidden max-sm:h-screen",
         className
       )}
     >
       <div className="flex size-full items-center justify-center">
-        <div className="size-[1720px] shrink-0 scale-50 sm:scale-75 lg:scale-100">
+        <div className="size-[1200px] sm:size-[1720px] shrink-0 scale-100 sm:scale-75 lg:scale-100">
           <div
             style={{
               transform: "rotateX(55deg) rotateY(0deg) rotateZ(-45deg)",
@@ -56,7 +56,7 @@ export const ThreeDMarquee = ({
                       key={imageIndex + image}
                       src={image}
                       alt={`Image ${imageIndex + 1}`}
-                      className="aspect-[970/700] rounded-lg object-cover ring ring-gray-950/5 hover:shadow-2xl brightness-50 "
+                      className=" aspect-[970/700] rounded-lg object-cover ring ring-gray-950/5 hover:shadow-2xl brightness-50 "
                       width={970}
                       height={700}
                     />

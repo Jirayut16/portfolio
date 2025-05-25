@@ -3,7 +3,7 @@ import { AnimatedSpan, Terminal, TypingAnimation } from "../magicui/terminal";
 export function TerminalHero() {
   return (
     <Terminal>
-      <TypingAnimation className="text-4xl" duration={80}>
+      <TypingAnimation className="text-2xl sm:text-4xl" duration={80}>
         &gt; npm run my-portfolio!!
       </TypingAnimation>
 

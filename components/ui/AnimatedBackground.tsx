@@ -19,10 +19,37 @@ const AnimatedBackground = () => {
     setCanvasSize();
     window.addEventListener("resize", setCanvasSize);
 
+    const getParticleCount = () => {
+      const width = window.innerWidth;
+      if (width < 640) return 15; // mobile
+      if (width < 1024) return 20; // tablet
+      return 30; // desktop
+    };
+
     // Particles array
     const particles: Array<{ x: number; y: number; dx: number; dy: number }> =
       [];
-    const particleCount = 80;
+    const particleCount = getParticleCount();
+
+    // Update particles on resize
+    const handleResize = () => {
+      setCanvasSize();
+      const newParticleCount = getParticleCount();
+
+      // Adjust particle array size
+      while (particles.length > newParticleCount) {
+        particles.pop();
+      }
+      while (particles.length < newParticleCount) {
+        particles.push({
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height,
+          dx: (Math.random() - 0.5) * 1,
+          dy: (Math.random() - 0.5) * 1,
+        });
+      }
+    };
+    window.addEventListener("resize", handleResize);
 
     // Create particles
     for (let i = 0; i < particleCount; i++) {
@@ -78,6 +105,7 @@ const AnimatedBackground = () => {
     animate();
 
     return () => {
+      window.removeEventListener("resize", handleResize);
       window.removeEventListener("resize", setCanvasSize);
     };
   }, []);

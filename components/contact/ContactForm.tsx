@@ -50,7 +50,7 @@ const ContactForm = () => {
       whileInView={{ opacity: 1, x: 0 }}
       transition={{ delay: 3, duration: 2 }} //fade เข้ามา
       viewport={{ once: true }}
-      className="flex flex-col relative justify-between p-4 w-full h-full "
+      className="flex flex-col relative justify-between gap-4 sm:gap-0 p-4 w-full h-full"
     >
       <Label>From</Label>
       <Input
@@ -79,7 +79,11 @@ const ContactForm = () => {
         onChange={(e) => setForm({ ...form, message: e.target.value })}
       />
 
-      <Button type="submit" disabled={loading} className="w-1/2 cursor-pointer">
+      <Button
+        type="submit"
+        disabled={loading}
+        className="w-full sm:w-1/2 cursor-pointer"
+      >
         {loading ? "Sending..." : "Send Me a Message"}
       </Button>
     </motion.form>
