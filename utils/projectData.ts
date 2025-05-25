@@ -145,8 +145,8 @@ export const projectData = [
     name: "My Portfolio",
     description:
       "A modern and responsive personal portfolio website built with Next.js, styled using Tailwind CSS, and enhanced with smooth animations from Framer Motion.",
-    image: "/3DMarque/saas.png",
-    demo: "#",
+    image: "/3DMarque/portfolio.png",
+    demo: "https://portfolio-eta-ten-11.vercel.app/",
     github: "https://github.com/Jirayut16/portfolio",
     tag: [
       "Next.js",
@@ -155,7 +155,7 @@ export const projectData = [
       "TypeScript",
       "Shadcn/ui",
     ],
-    features: ["Responsive Design", "Smooth Animations", "Dark Mode"],
+    features: ["Responsive Design", "Smooth Animations", "Scroll animation"],
   },
 
   {

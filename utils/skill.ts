@@ -6,16 +6,16 @@ export const skillsData = [
       { name: "CSS", logo: "/FE/css.svg" },
       { name: "JavaScript", logo: "/FE/js.svg" },
       { name: "TypeScript", logo: "/FE/ts.svg" },
-      { name: "React", logo: "/FE/react.svg" },
+      { name: "React", logo: "/FE/React.svg" },
       { name: "Next.js", logo: "/FE/nextjs.svg" },
-      { name: "Astro", logo: "/FE/astro.svg" },
+      { name: "Astro", logo: "/FE/Astro.svg" },
     ],
   },
   {
     category: "Backend",
     skills: [
       { name: "Node.js", logo: "/BE/Nodejs.svg" },
-      { name: "Bun", logo: "/BE/bun.svg" },
+      { name: "Bun", logo: "/BE/Bun.svg" },
       { name: "Express", logo: "/BE/expressjs.svg" },
       { name: "Hono", logo: "/BE/hono.svg" },
     ],
@@ -41,9 +41,9 @@ export const skillsData = [
   {
     category: "Tools & Others",
     skills: [
-      { name: "Git", logo: "/Tool/git.svg" },
-      { name: "Postman", logo: "/Tool/postman.svg" },
-      { name: "VsCode", logo: "/Tool/vs-code.svg" },
+      { name: "Git", logo: "/Tool/Git.svg" },
+      { name: "Postman", logo: "/Tool/Postman.svg" },
+      { name: "VsCode", logo: "/Tool/VS-Code.svg" },
     ],
   },
 ];
