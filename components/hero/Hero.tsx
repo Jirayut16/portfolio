@@ -43,7 +43,7 @@ const Hero = () => {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 1.2, ease: "easeInOut" }}
-            className="absolute -top-20 inset-0 z-20 flex items-center justify-center p-8 sm:p-0"
+            className="absolute -top-20 inset-0 z-[999] flex items-center justify-center p-8 sm:p-0 bg-background"
           >
             <TerminalHero />
           </motion.div>

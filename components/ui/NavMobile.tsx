@@ -7,7 +7,7 @@ import Link from "next/link";
 
 const sidebarVariants = {
   open: {
-    clipPath: "circle(1200px at 350px 40px)",
+    clipPath: "circle(1200px at calc(100% - 2.5rem) 2.5rem)",
     transition: {
       type: "spring",
       stiffness: 20,
@@ -15,7 +15,7 @@ const sidebarVariants = {
     },
   },
   closed: {
-    clipPath: "circle(25px at 390px 40px)", //x,y
+    clipPath: "circle(25px at calc(100% - 2.5rem) 2.5rem)", //x,y
     transition: {
       delay: 0.2,
       type: "spring",
@@ -100,7 +100,7 @@ const ToggleButton = ({
   return (
     <button
       onClick={() => setOpen((prev) => !prev)}
-      className="z-[999] flex justify-center items-center fixed top-5 right-5 w-10 h-10 rounded-full bg-transparent border-none cursor-pointer"
+      className="z-[900] flex justify-center items-center absolute top-5 right-5 w-10 h-10 rounded-full bg-transparent border-none cursor-pointer"
     >
       <svg width="20" height="25" viewBox="0 0 23 23">
         <motion.path
@@ -138,6 +138,10 @@ const ToggleButton = ({
 
 const Sidebar = () => {
   const [open, setOpen] = useState(false);
+  const hasShowTerminal =
+    typeof window !== "undefined"
+      ? localStorage.getItem("terminalPlayed") === "true"
+      : false;
   // Lock scroll when sidebar is open
   useEffect(() => {
     if (open) {
@@ -150,18 +154,22 @@ const Sidebar = () => {
       document.body.style.overflow = "auto";
     };
   }, [open]);
+
   return (
     <motion.div
       className="flex md:hidden flex-col items-center justify-center text-black"
       animate={open ? "open" : "closed"}
     >
       <motion.div
-        className="z-[999] fixed top-0 bottom-0 w-full h-screen bg-white"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 2, delay: hasShowTerminal ? 2 : 10 }}
+        className="z-[900] fixed top-0 bottom-0 w-full h-screen bg-white"
         variants={sidebarVariants}
       >
+        <ToggleButton setOpen={setOpen} />
         <Links setOpen={setOpen} />
       </motion.div>
-      <ToggleButton setOpen={setOpen} />
     </motion.div>
   );
 };

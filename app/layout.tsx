@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Navbar } from "@/components/navbar/Navbar";
 import { Toaster } from "@/components/ui/sonner";
-import Sidebar from "@/components/ui/NavMobile";
 
 export const metadata: Metadata = {
   title: "OhmmiiDev | Portfolio",
@@ -19,7 +18,6 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body>
         <Navbar />
-        <Sidebar />
         {children}
         <Toaster richColors />
       </body>
