@@ -8,6 +8,7 @@ import { Button } from "../ui/button";
 import Image from "next/image";
 import { oxanium } from "../font/font";
 import Link from "next/link";
+import { Download, Send } from "lucide-react";
 
 const Hero = () => {
   const [showTerminal, setShowTerminal] = useState(false);
@@ -83,7 +84,7 @@ const Hero = () => {
               initial={{ opacity: 0, scale: 0, x: 500 }}
               animate={{ opacity: 1, scale: 1, x: 0 }}
               transition={{ duration: 1, delay: 1 }}
-              className="flex flex-col items-center justify-center space-y-12 sm:space-y-8 px-10 me-0 sm:me-14 absolute z-50 sm:relative @max-sm:w-full h-full"
+              className="flex flex-col items-center justify-center space-y-12 sm:space-y-8 px-10 me-0 sm:me-14 absolute z-40 sm:relative @max-sm:w-full h-full"
             >
               <div>
                 <h1
@@ -109,7 +110,7 @@ const Hero = () => {
               >
                 Jirayut Sikkhacharoen
               </span>
-              <div className="flex justify-center w-full p-2 mt-4 border-t-2 border-primary">
+              <div className="flex justify-center w-full p-2 mt-4 border-t-2 border-destructive">
                 <p className="text-xl font-extralight sm:text-lg sm:font-normal text-gray-100">
                   I&apos;m a passionate Web Developer with a love for creating
                   beautiful and functional applications. I constantly strive to
@@ -118,11 +119,18 @@ const Hero = () => {
                 </p>
               </div>
               <div className="flex gap-4">
-                <Button className="cursor-pointer">
+                <Button className="cursor-pointer group">
                   <Link href="#contact">Contact Me</Link>
+                  <Send className="group-hover:-translate-y-1 group-hover:translate-x-1 transition-all duration-500" />
                 </Button>
-                <Button className="cursor-pointer">
-                  <Link href="#contact">Contact Me</Link>
+                <Button className="cursor-pointer bg-destructive hover:bg-destructive/90 group">
+                  <Link href="/Jirayut_Resume.pdf" target="_blank">
+                    My Resume
+                  </Link>
+                  <Download
+                    className="group-hover:translate-y-1 transition-all duration-500"
+                    size={44}
+                  />
                 </Button>
               </div>
             </motion.div>
